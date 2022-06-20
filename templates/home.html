@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+  <header class="first">
+            
+    <img src="https://www.vodafone.com/sites/default/files/inline-images/gN08grNr8s9vipkhltm4sWWezExdQg5LwJrGY2Ma2ojTjCnvi2.png" alt="logo">
+    <i class='fas fa-user-alt'></i>
+  </header>
+ <div class="login">
+	<h1>Seoul Bike Rental Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="interview_score3" placeholder="Month 1 to 12" required="required" /><br>
+    	<input type="text" name="experience" placeholder="Day 1 to 30" required="required" /><br>
+      <input type="text" name="test_score" placeholder="Hour 0 to 23" required="required" /><br>
+      <input type="text" name="interview_score5" placeholder="Functioning Day 1 yes or 0 No" required="required" /><br>
+      <input type="text" name="interview_score6" placeholder="Temperature -15 to 50 'c" required="required" /><br>
+      <input type="text" name="interview_score7" placeholder="Humidity 0 to 98  g.m-3" required="required" /><br>
+      <input type="text" name="interview_score8" placeholder="Dew Point Temperature -27 to 30 'c" required="required" /><br>
+     
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>

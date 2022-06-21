@@ -1,7 +1,7 @@
 FROM python:3.9-slim
 
 COPY requirements.txt .
-RUN pip install reuirements.txt
+RUN pip install requirements.txt
 
 RUN mkdir -p app
 COPY ./app app
